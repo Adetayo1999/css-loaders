@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title>
+    CSS Spinner 
+</title>
+
+ <style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container{
+   height:100vh;
+   width:100%;
+   background:linear-gradient(to right ,rgba(20 , 240 , 50 , 0.65) , rgba(20 , 240 , 50 , 0.95));
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   flex-direction: column;
+}
+
+h1{
+    margin-bottom: 40px;
+    color:#fff;
+    width:150px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+   /* .spinner p{
+       visibility:hidden;
+   }
+
+
+   .spinner::after{
+          content:"";
+          display:block;
+          border:2px solid black;
+          height:60px;
+          width:60px;
+          border-radius:50%;
+   } */
+   .spin{
+    border:16px solid black;
+          height:120px;
+          width:120px;
+          border-radius:50%;
+          overflow: hidden;
+          border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db;
+   animation: spinner 2s infinite forwards linear;
+   }
+
+   @keyframes spinner{
+      
+    to{
+        transform: rotate(360deg);
+    }
+
+   }
+
+   .spinner{
+       margin-top: 30px;
+       height:100px;
+       width:100px;
+       border-radius: 50%;
+       border: 5px solid red;
+       border-right: 5px solid transparent;
+   animation: spinner 2s infinite forwards linear;
+   
+   }
+
+   p{
+   padding: 10px;
+   opacity: 0;
+   transition: ease-in 0.3s;
+   }
+
+</style>
+
+</head>
+<body>
+ 
+    <div class="container">
+         <h1>CSS Animation Tutorial</h1>
+           <div class="spin"> 
+        </div>
+        <div class="spinner"></div>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis et mollitia magni maiores. Explicabo et atque ducimus distinctio alias accusamus non, quia minima est similique aliquid placeat eaque, reiciendis optio velit numquam esse. Sit porro odit sapiente itaque, illum quo.
+        </p>
+    </div>
+
+<script>
+ const paragraph = document.querySelector("p");
+  const spinner = document.querySelector(".spinner");
+  const spin = document.querySelector(".spin");
+
+document.addEventListener("DOMContentLoaded" , () => {
+    setTimeout(() => {
+        paragraph.style.opacity = "1";
+        spinner.style.display ="none"
+        spin.style.display = "none"
+    } , 4000)
+})
+
+
+
+</script>
+<script src="main.js"></script>
+</body>
+</html>
